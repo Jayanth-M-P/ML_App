@@ -16,7 +16,7 @@ from sklearn.linear_model import SGDClassifier
 from flask import Flask, request, render_template_string
 import joblib
 #nltk.download('stopwords')
-
+""""
 # extracting the data
 df = pd.read_excel("DM_Report.xlsx", engine="openpyxl")
 print("Initial shape:", df.shape)
@@ -95,7 +95,7 @@ joblib.dump(model_sub, 'model_subcat.pkl')
 joblib.dump(tfidf, 'tfidf_vectorizer.pkl')
 joblib.dump(le_cat, 'label_encoder_cat.pkl')
 joblib.dump(le_subcat, 'label_encoder_sub.pkl')
-
+""""
 app = Flask(__name__)
 
 # Load models and vectorizers
@@ -165,4 +165,4 @@ def index():
     return render_template_string(HTML_TEMPLATE, category=category, subcategory=subcategory, request={"form": {"description": description_text}})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
