@@ -1,10 +1,4 @@
-pandas
-seaborn
-matplotlib
-nltk
+Flask
 scikit-learn
-imbalanced-learn
-flask
 joblib
-gunicorn
-openpyxl
+nltk
