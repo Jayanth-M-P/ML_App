@@ -1,20 +1,14 @@
 # Imports
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 import re
 import nltk
 from nltk.corpus import stopwords
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.multioutput import MultiOutputClassifier
-from sklearn.metrics import classification_report
-from imblearn.over_sampling import RandomOverSampler
-from sklearn.linear_model import SGDClassifier
 from flask import Flask, request, render_template_string
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.multioutput import MultiOutputClassifier
+from sklearn.preprocessing import LabelEncoder
 import joblib
+
 #nltk.download('stopwords')
 """"
 # extracting the data
@@ -26,7 +20,7 @@ df.dropna(subset=['Category'], inplace=True)
 
 # Removing exact duplicates on (Description + Category + Sub-category)
 df.drop_duplicates(subset=['Description', 'Category', 'Sub-Category'], inplace=True)
-
+"""
 # Cleaning Description
 stop_words = set(stopwords.words('english'))
 
@@ -35,7 +29,7 @@ def clean_text(text):
     text = text.lower()
     text = re.sub(r'[^a-z\s]', '', text)
     return ' '.join(word for word in text.split() if word not in stop_words)
-
+"""
 df['Cleaned_Description'] = df['Description'].apply(clean_text)
 
 # cleaned descriptions to avoid label noise
