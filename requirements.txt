@@ -4,4 +4,4 @@ joblib
 nltk
 gunicorn
 pandas
-numpy==1.24.4
+numpy<1.25
