@@ -1,8 +1,9 @@
-Flask
-scikit-learn
 pandas
+seaborn
+matplotlib
 nltk
+scikit-learn
+imbalanced-learn
+flask
 joblib
-openpyxl
-imblearn
 gunicorn
